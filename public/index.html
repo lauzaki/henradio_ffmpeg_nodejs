@@ -7,15 +7,25 @@
 
 <body>
     <div class="container">
-        <h1>Hen.Radio audio compression test page</h1>
+        <h1>Hen.Radio audio compression tool...</h1>
         <form id='form'>
             <div class="input-group">
-                <label for='files'>Select your mp3 music file</label>
-                <input id='music' name="music" type="file">
+                <label for='files'>Select your wav music file to be compressed (max 100Mb)</label>
+                <input id='audioFile' name="music" type="file">
             </div>
+            <input id='socketId' name="socketId" type="text">
             <button class="submit-btn" type='submit'>Upload</button>
         </form>
+        <div id='processing'>processing</div>
+        <button id="downloadBtn" class="submit-btn">Download</button>
+        <div id='menu'>
+            <form action="https://www.hicetnunc.xyz/">
+                <input type="submit" value="Go to HEN" />
+            </form>
+            <button id="againBtn" class="submit-btn">Compress another file</button>
+        </div>
     </div>
-
+    <script src="./axios.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src='./script.js'></script>
 </body>
