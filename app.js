@@ -5,6 +5,19 @@ const fs = require('fs')
 const { createFFmpeg, fetchFile } = require('@ffmpeg/ffmpeg')
 const ffmpeg = createFFmpeg({ log: true })
 
+const {getAllTracks} = require('./api/get-all-tracks.js');
+
+//Import track list
+const getStaticProps = async() => {
+  const tracks = await getAllTracks();
+
+  console.log(tracks)
+};
+
+getStaticProps()
+
+
+
 //Handling of file upload to the server-------------------------------------------------------
 //multer setup
 const fileStorage = multer.diskStorage({
